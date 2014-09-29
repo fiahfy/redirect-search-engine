@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       html: 'dist/html/*.html'
     },
 
-    ngmin: {
+    ngAnnotate: {
       dist: {
         files: [{
           expand: true,
@@ -176,8 +176,8 @@ module.exports = function (grunt) {
     'copy',
     'concat',
 //    'autoprefixer',
-    'ngmin',
-    'cssmin',
+    'ngAnnotate',
+//    'cssmin',
     'uglify',
 //    'rev',
     'usemin',

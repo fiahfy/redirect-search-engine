@@ -1,19 +1,22 @@
 {
-  "name": "My Extension",
-  "version": "0.0.0",
-  "description": "This is my extension.",
+  "name": "Redirect Search Engine",
+  "version": "1.0.0",
+  "description": "Redirect Yahoo search url to Google search url.",
 
   "manifest_version": 2,
 
   "icons": {
   },
 
-  "browser_action": {
-    "default_popup": "html/popup.html"
+  "background": {
+    "page": "html/background.html"
   },
 
   "permissions": [
-    "storage"
+    "webRequest",
+    "webRequestBlocking",
+    "*://search.yahoo.co.jp/",
+    "*://search.yahoo.com/"
   ],
 
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"

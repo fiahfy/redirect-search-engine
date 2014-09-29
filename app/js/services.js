@@ -4,23 +4,25 @@
 
 var services = angular.module('services', []);
 
-services.service('CounterService', function() {
-	var me = this;
-	this.increment = function(callback){
-		me.get(function(count){
-			me.set(++count, function(){
-				callback(count);
-			});
-		});
-	};
-	this.get = function(callback){
-		chrome.storage.local.get('count', function(items){
-			callback(items['count'] || 0);
-		});
-	};
-	this.set = function(count, callback){
-		chrome.storage.local.set({'count': count}, function() {
-			callback();
-		});
-	}
+services.service('RedirectService', function() {
+  this.setup = function(){
+    chrome.webRequest.onBeforeRequest.addListener(
+      function(details) {
+        var parser = document.createElement('a');
+        parser.href = details.url;
+
+        var q = '';
+        var match = parser.search.match(/[?&]p=(.*?)(&|$)/i);
+        if (match) {
+          q = match[1];
+        }
+
+        return {
+          redirectUrl: 'https://www.google.com/#q=' + q
+        };
+      },
+      {urls: ["*://*/search*"]},
+      ["blocking"]
+    );
+  };
 });

@@ -1,53 +1,31 @@
-chrome-extension-angular-skeleton
+Redirect Search Engine
 ===========
 
-This project is an application skeleton for chrome extension using AngularJS.
+Redirect Yahoo search url to Google search url.
 
-Getting Started
+Version
 ---------
 
-###Clone project
+1.0.0
 
-```
-git clone https://github.com/fiahfy/chrome-extension-angular-skeleton.git
-cd chrome-extension-angular-skeleton
-```
-
-###Install node modules
-
-    npm install
-
-Develop
+Feature
 ---------
 
-Add `app` directory to Chrome.  
-Run `watch` task.
+* Move Google search url with same query automatically when going Yahoo search url.
 
-```
-grunt watch
-```
-
-Lint changed files with JSHint, and Test with Karma.
-
-Test
+Install
 ---------
 
-Run `test` task.
-
 ```
-grunt test
+git clone https://github.com/fiahfy/redirect-search-engine.git
+cd redirect-search-engine
+npm install
 ```
 
-Test with Karma according to the specs.
+* Open <chrome://extensions/>.
+* Drag & drop `app` directory.
 
-Build & Release Production
+Usage
 ---------
 
-Run `build` task.
-
-```
-grunt build
-```
-
-Created `dist` and archived `dist.zip`.  
-Submit `dist.zip` to Chrome Web Store.
+* Enabled immediately after install.
