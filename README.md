@@ -6,7 +6,7 @@ Redirect Yahoo search url to Google search url.
 Version
 ---------
 
-1.0.0
+1.0.1
 
 Feature
 ---------

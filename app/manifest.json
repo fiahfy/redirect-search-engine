@@ -1,6 +1,6 @@
 {
   "name": "Redirect Search Engine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Redirect Yahoo search url to Google search url.",
 
   "manifest_version": 2,
